@@ -6,10 +6,6 @@ $config = [
             'linkAssets' => env('LINK_ASSETS'),
             'appendTimestamp' => YII_ENV_DEV
         ]
-    ],
-    'as locale' => [
-        'class' => 'common\behaviors\LocaleBehavior',
-        'enablePreferredLanguage' => true
     ]
 ];
 
