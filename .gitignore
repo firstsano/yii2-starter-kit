@@ -33,3 +33,9 @@ phpunit.phar
 
 # Tests
 tests/codeception/*/_support/_generated/*
+
+# Log
+logs
+
+# Composer lock
+composer.lock
