@@ -10,6 +10,7 @@ defined('STDOUT') or define('STDOUT', fopen('php://stdout', 'w'));
 require( YII_APP_BASE_PATH . '/common/env.php');
 
 // Bootstrap application
+require( YII_APP_BASE_PATH . '/common/config/bootstrap.php');
 require( YII_APP_BASE_PATH . '/console/config/bootstrap.php');
 
 $config = \yii\helpers\ArrayHelper::merge(
