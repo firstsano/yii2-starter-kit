@@ -6,6 +6,7 @@ use tests\codeception\common\fixtures\ArticleAttachmentFixture;
 use tests\codeception\common\fixtures\ArticleCategoryFixture;
 use tests\codeception\common\fixtures\ArticleFixture;
 use tests\codeception\common\fixtures\RbacAuthAssignmentFixture;
+use tests\codeception\common\fixtures\SubscriptionFixture;
 use tests\codeception\common\fixtures\UserFixture;
 use Codeception\Module;
 use tests\codeception\common\fixtures\UserProfileFixture;
@@ -58,8 +59,9 @@ class FixtureHelper extends Module
     public function fixtures()
     {
         return [
-            [
-                'class' => InitDbFixture::className(),
+            'subscription' => [
+                'class' => SubscriptionFixture::className(),
+                'dataFile' => '@tests/codeception/common/fixtures/data/subscription.php',
             ],
             'article' => [
                 'class' => ArticleFixture::className(),
