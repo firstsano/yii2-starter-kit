@@ -21,7 +21,6 @@ class UserTest extends Yii2TestCase
 
     protected function _before()
     {
-
     }
 
 
@@ -32,11 +31,5 @@ class UserTest extends Yii2TestCase
     // tests
     public function testUser()
     {
-        $user =  new \common\models\User();
-        $user->email= "12345677713@test.com";
-        $user->password_hash="1234";
-        $user->username="<p>xss;</p>";
-        $this->assertTrue($user->save());
-        $this->assertTrue($user->username==='&lt;p&gt;xss;&lt;/p&gt;');
     }
 }

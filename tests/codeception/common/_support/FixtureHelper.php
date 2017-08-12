@@ -10,6 +10,7 @@ use tests\codeception\common\fixtures\UserFixture;
 use Codeception\Module;
 use tests\codeception\common\fixtures\UserProfileFixture;
 use yii\test\FixtureTrait;
+use yii\test\InitDbFixture;
 
 /**
  * This helper is used to populate database with needed fixtures before any tests should be run.
@@ -26,6 +27,7 @@ class FixtureHelper extends Module
     use FixtureTrait {
         loadFixtures as protected;
         fixtures as protected;
+        initFixtures as public;
         globalFixtures as protected;
         unloadFixtures as protected;
         getFixtures as protected;
@@ -39,7 +41,7 @@ class FixtureHelper extends Module
      */
     public function _beforeSuite($settings = [])
     {
-        $this->loadFixtures();
+        $this->initFixtures();
     }
 
     /**
@@ -56,6 +58,9 @@ class FixtureHelper extends Module
     public function fixtures()
     {
         return [
+            [
+                'class' => InitDbFixture::className(),
+            ],
             'article' => [
                 'class' => ArticleFixture::className(),
                 'dataFile' => '@tests/codeception/common/fixtures/data/article.php',
