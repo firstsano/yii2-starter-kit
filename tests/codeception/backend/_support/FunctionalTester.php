@@ -1,5 +1,10 @@
 <?php
+
 namespace tests\codeception\backend;
+
+use Yii;
+use tests\codeception\common\_support\Page;
+use tests\codeception\backend\_pages\LoginPage;
 
 /**
  * Inherited Methods
@@ -23,4 +28,14 @@ class FunctionalTester extends \Codeception\Actor
    /**
     * Define custom actions here
     */
+   public function login()
+   {
+       $loginPage = LoginPage::openBy($this);
+       $loginPage->login('webmaster', 'webmaster');
+   }
+
+   public function openPage($route)
+   {
+       Page::openBy($this, $route);
+   }
 }
