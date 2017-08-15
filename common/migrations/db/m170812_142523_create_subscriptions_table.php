@@ -12,7 +12,7 @@ class m170812_142523_create_subscriptions_table extends Migration
      */
     public function up()
     {
-        $this->createTable('subscriptions', [
+        $this->createTable('{{%subscriptions}}', [
             'id' => $this->primaryKey(),
             'email' => $this->string(100)->notNull(),
             'is_blocked' => $this->boolean()->defaultValue(false),
@@ -24,6 +24,6 @@ class m170812_142523_create_subscriptions_table extends Migration
      */
     public function down()
     {
-        $this->dropTable('subscriptions');
+        $this->dropTable('{{%subscriptions}}');
     }
 }
